@@ -3,6 +3,7 @@ import Checkout from "../Checkout/Checkout";
 import Login from "../Login/Login";
 import SignUp from "../Login/SignUp";
 import Orders from "../Orders/Orders";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Home } = require("../Home/Home/Home");
@@ -21,7 +22,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/checkout/:id',
-                element: <Checkout></Checkout>,
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {

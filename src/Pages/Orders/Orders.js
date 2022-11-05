@@ -29,10 +29,8 @@ const Orders = () => {
                         setOrders(remaining)
                     }
                 })
-
         }
     }
-
 
     const handleStatusUpdate = id => {
         fetch(`http://localhost:5000/orders/${id}`, {
